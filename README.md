@@ -46,16 +46,16 @@ The competition provides three CSV files:
 
 ## 3. Challenges
 
-**Missing Values**
+**Missing Values:**
 Several columns contain missing data. Rather than blindly filling all nulls, we first look for logical relationships between columns. For example, if a passenger's CryoSleep status is `True`, they were in suspended animation — their spending at FoodCourt, Spa, RoomService, ShoppingMall, and VRDeck should logically be 0. After applying these contextual rules, remaining nulls are filled with the median (numerical) or mode (categorical).
 
-**Categorical Encoding**
+**Categorical Encoding:**
 Features like HomePlanet, Destination, CryoSleep, and VIP are stored as text or boolean values. Machine learning models require numerical inputs, so these must be encoded using One-Hot Encoding or Label Encoding.
 
-**Feature Engineering**
+**Feature Engineering:**
 The Cabin column encodes three pieces of information — deck, number, and side — packed into one string. Splitting this into three separate features (Deck, CabinNum, Side) can meaningfully improve model performance. Similarly, PassengerId encodes a group number (gggg_pp format) — we extract the group number as a new feature before discarding the original ID column, since passengers travelling in the same group may share the same fate.
 
-**Skewed Distributions & Outliers**
+**Skewed Distributions & Outliers:**
 The spending amenity columns (RoomService, Spa, VRDeck, etc.) are heavily skewed, with many zero values and occasional large outliers. Feature scaling (e.g. StandardScaler or MinMaxScaler) is required so these don't distort the model.
 
 ---
@@ -138,14 +138,3 @@ The test.csv file provided by Kaggle is unlabelled — we cannot measure accurac
 
 This allows us to tune hyperparameters and compare models without wasting Kaggle submission attempts. Only once we are satisfied with local performance do we generate predictions on test.csv for the final submission.
 
----
-
-## 9. Modelling Plan
-
-| Step | Description |
-|---|---|
-| 1. Baseline | Train a Logistic Regression model as a simple, interpretable benchmark |
-| 2. Feature Selection | Add features one by one; keep those that improve validation accuracy |
-| 3. Extended Model | Train a Random Forest Classifier with the best selected features if time allows |
-| 4. Compare | Compare Accuracy and F1 Score between Logistic Regression and Random Forest |
-| 5. Submit | Use the best-performing model to generate predictions on test.csv for Kaggle |
