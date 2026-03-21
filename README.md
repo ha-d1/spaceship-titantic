@@ -60,23 +60,7 @@ The spending amenity columns (RoomService, Spa, VRDeck, etc.) are heavily skewed
 
 ---
 
-## 4. Skills We Will Use
-
-| Skill / Tool | Purpose |
-|---|---|
-| Python (pandas, NumPy) | Data loading, manipulation, and cleaning |
-| Matplotlib / Seaborn | Exploratory data analysis and visualisation |
-| Exploratory Data Analysis (EDA) | Understanding distributions and relationships between features and the target |
-| Data Cleaning | Handling null/missing values |
-| Feature Engineering | Splitting Cabin, extracting group from PassengerId |
-| Categorical Encoding | Converting text/boolean features into numerical format |
-| Feature Scaling | Normalising numerical columns so large values don't dominate |
-| Model Training & Evaluation | Fitting a classifier, measuring performance, avoiding overfitting |
-| Submission Formatting | Producing a correctly structured CSV file for Kaggle |
-
----
-
-## 5. Type of Model
+## 4. Type of Model
 
 Because this is a **binary classification** problem, we use classification algorithms rather than regression:
 
@@ -90,7 +74,7 @@ We will train Logistic Regression first as a benchmark, then Random Forest if ti
 
 ---
 
-## 6. Feature Selection
+## 5. Feature Selection
 
 Choosing the right features is one of the most important steps. We will use a restricted model approach — adding features one by one and keeping the ones that improve validation accuracy — alongside these three techniques:
 
@@ -118,7 +102,7 @@ Visually inspect how each feature relates to the target. Key observations from t
 
 ---
 
-## 7. Evaluation Metrics
+## 6. Evaluation Metrics
 
 We will track two metrics locally during development:
 
@@ -129,7 +113,7 @@ We will track two metrics locally during development:
 
 ---
 
-## 8. Validation Strategy
+## 7. Validation Strategy
 
 The test.csv file provided by Kaggle is unlabelled — we cannot measure accuracy on it locally. To evaluate and tune our model, we split train.csv into two parts:
 
