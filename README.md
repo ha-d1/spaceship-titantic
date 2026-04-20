@@ -1,7 +1,7 @@
 # spaceship-titanic
-## How to Run
 
 **Prerequisites**
+
 Make sure you have the following installed:
 - [Python 3.8+](https://www.python.org/downloads/)
 - [Git](https://git-scm.com/downloads/)
