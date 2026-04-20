@@ -13,7 +13,7 @@ Make sure you have the following installed:
 
 1. Clone the repo
 ```bash
-git clone https://github.com/ha-d1/spaceship-titanic.git
+git clone https://github.com/ha-d1/spaceship-titantic.git
 ```
 3. Navigate into the folder
 4. Install dependencies with `pip install -r requirements.txt`
